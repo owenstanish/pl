@@ -2,23 +2,30 @@
 
 using namespace std;
 
-bool bisiesto(int x)
-{
+int nsimo(int p){
 
-    if(x%4==0){
-        if(x%100!=0||x%400==0 )
-            return true;
+    int s;
+    int ig=0;
+    int nume=1;
+    while(p != ig){
+        nume=nume+1;
+        s=0;
+        for(int i=2;i<100;i++){
+            if(nume%i==0){
+                s++;
+            }
+        }
+        if(s<2){//ES PRIMO
+            ig++;
+        }
+        if(s<2 & p==ig){
+            return nume;
+
+        }
     }
-    else
-        return false;
-
-
 }
-int main(){
-    cout<<bisiesto(2016);
+int main()
+{
+    cout<<nsimo(6);
 
-
-
-
-    return 0;
 }
