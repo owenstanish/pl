@@ -1,31 +1,49 @@
 #include <iostream>
 
 using namespace std;
+int fibo(int x)
+{
+    if(x==0 || x==1)
+       return x;
+    else
+       return fibo(x - 1) + fibo(x - 2);
+}
 
-int nsimo(int p){
+int sin(int x){
+    int sum=0;
 
-    int s;
-    int ig=0;
-    int nume=1;
-    while(p != ig){
-        nume=nume+1;
-        s=0;
-        for(int i=2;i<100;i++){
-            if(nume%i==0){
-                s++;
-            }
-        }
-        if(s<2){//ES PRIMO
-            ig++;
-        }
-        if(s<2 & p==ig){
-            return nume;
+    int y=0;
+    int z=0;
+    while(y<x){
+        sum=sum+y;
+        y+=3;
+    }
+    while(z<x){
+        sum=sum+z;
+        z+=5;
+    }
+
+
+    return sum;
+}
+
+int factore(int x){
+    for (int i=1;i<50;i++){
+        if (x%i!=0){
+            cout<<i;
 
         }
     }
+
+
+    return 0;
 }
+
 int main()
 {
-    cout<<nsimo(6);
 
+    //factore(13195);
+    //cout<<fibo(6);
+    cout<<sin(10);
+    return 0;
 }
