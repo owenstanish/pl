@@ -1,49 +1,36 @@
 #include <iostream>
 
 using namespace std;
-int fibo(int x)
-{
-    if(x==0 || x==1)
-       return x;
-    else
-       return fibo(x - 1) + fibo(x - 2);
-}
+int invert(const int ar[],const int tam){
+    for(int i=tam-1;i>=0;i--){
 
-int sin(int x){
-    int sum=0;
-
-    int y=0;
-    int z=0;
-    while(y<x){
-        sum=sum+y;
-        y+=3;
+        cout<<ar[i]<<",";
     }
-    while(z<x){
-        sum=sum+z;
-        z+=5;
-    }
-
-
-    return sum;
-}
-
-int factore(int x){
-    for (int i=1;i<50;i++){
-        if (x%i!=0){
-            cout<<i;
-
-        }
-    }
-
-
     return 0;
 }
+int invertR(int ar[],int pri,int ult){
+    int x;
+    int y=ult;
+    if (pri !=y){
 
+        ar[pri]=ar[ult];
+        ar[ult]=x;
+        x=ar[pri];
+    }
+    else{
+        return ar[];
+    }
+    return invertR(ar,pri+1,ult-1);
+}
 int main()
 {
 
-    //factore(13195);
-    //cout<<fibo(6);
-    cout<<sin(10);
+
+    int arr[]={1,2,3,4,5,6,7};
+
+
+    cout<<invertR(arr,0,6)
     return 0;
+
+
 }
